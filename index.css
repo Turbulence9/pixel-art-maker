@@ -1,0 +1,194 @@
+:root {
+  --gridColor : #ffffff;
+  --borderColor : LightSlateGray;
+  --red : 4px solid #434d56;
+  --darkred : 4px solid #434d56;
+  --green : 4px solid #434d56;
+  --blue : 4px solid #434d56;
+  --purple : 4px solid #434d56;
+  --pink : 4px solid #434d56;
+  --yellow : 4px solid #434d56;
+  --orange : 4px solid #434d56;
+  --lightgreen : 4px solid #434d56;
+  --lightblue : 4px solid #434d56;
+  --mediumpurple : 4px solid #434d56;
+  --darkorange : 4px solid #434d56;
+  --peachpuff : 4px solid #434d56;
+  --saddlebrown : 4px solid #434d56;
+  --black : 4px solid #434d56;
+  --newCl : 4px solid #434d56;
+  --pencil : 4px dashed black;
+  --paint : 4px solid #434d56;
+  --eraser : 4px solid #434d56;
+}
+
+body {
+    background-color: #434d56;
+}
+
+#outer {
+    background-color: LightSlateGray;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 600px;
+    width: 1080px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+}
+
+#container {
+    background-color: LightSlateGray;
+    height: 480px;
+    width: 960px;
+    position: absolute;
+    padding-top: 40px;
+    top: 0;
+    bottom: 1;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+}
+
+#colors {
+    height: 80px;
+    width: 1060px;
+    position: absolute;
+    top: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.cl {
+  height: 23px;
+  width: 23px;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float: left;
+}
+
+#red {
+  background-color: red;
+  border: var(--red);
+}
+
+#darkred {
+  background-color: darkred;
+  border: var(--darkred);
+}
+
+#lightgreen {
+  background-color: lightgreen;
+  border: var(--lightgreen);
+}
+
+#green {
+  background-color: green;
+  border: var(--green);
+}
+
+#lightblue {
+  background-color: lightblue;
+  border: var(--lightblue);
+}
+
+#blue {
+  background-color: blue;
+  border: var(--blue);
+}
+
+#mediumpurple{
+  background-color: mediumpurple;
+  border: var(--mediumpurple);
+}
+
+#purple{
+  background-color: purple;
+  border: var(--purple);
+}
+
+#pink {
+  background-color: pink;
+  border: var(--pink);
+}
+
+#yellow {
+  background-color: yellow;
+  border: var(--yellow);
+}
+
+#orange {
+  background-color: orange;
+  border: var(--orange);
+}
+
+#darkorange {
+  background-color: darkorange;
+  border: var(--darkorange);
+}
+
+#peachpuff {
+  background-color: peachpuff;
+  border: var(--peachpuff);
+}
+
+#saddlebrown {
+  background-color: saddlebrown;
+  border: var(--saddlebrown);
+}
+
+#black {
+  background-color: black;
+  border: var(--black);
+}
+
+#newCl{
+  height: 24px;
+  width: 50px;
+  background-color: LightSlateGray;
+  border: var(--newCl);
+}
+
+#pencil {
+  background-image: url("pencil.png");
+  border: var(--pencil);
+  float: right;
+}
+
+#paint {
+  background-image: url("paint.png");
+  border: var(--paint);
+  float: right;
+}
+
+#eraser {
+  background-image: url("eraser.png");
+  border: var(--eraser);
+  float: right;
+}
+
+#undo {
+  background-image: url("undo.png");
+  border: 4px solid #434d56;
+  float: right;
+}
+
+.unit {
+    background-color: var(--gridColor);
+    height: 10px;
+    width: 10px;
+    border: 1px solid var(--borderColor);
+    display: inline-block;
+    float: left;
+}
