@@ -8,7 +8,6 @@
   --purple : 4px solid #434d56;
   --pink : 4px solid #434d56;
   --yellow : 4px solid #434d56;
-  --orange : 4px solid #434d56;
   --lightgreen : 4px solid #434d56;
   --lightblue : 4px solid #434d56;
   --mediumpurple : 4px solid #434d56;
@@ -128,11 +127,6 @@ body {
   border: var(--yellow);
 }
 
-#orange {
-  background-color: orange;
-  border: var(--orange);
-}
-
 #darkorange {
   background-color: darkorange;
   border: var(--darkorange);
@@ -180,6 +174,12 @@ body {
 
 #undo {
   background-image: url("undo.png");
+  border: 4px solid #434d56;
+  float: right;
+}
+
+#clear {
+  background-image: url("clear.png");
   border: 4px solid #434d56;
   float: right;
 }

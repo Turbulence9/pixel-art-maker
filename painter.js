@@ -35,11 +35,14 @@ colorWell.addEventListener("change", function(){
 
 let mDown = false;
 let currentCl = "";
-let colorArr = ["red","darkred","green","blue","purple","pink","yellow","orange","lightgreen","lightblue",
+let colorArr = ["red","darkred","green","blue","purple","pink","yellow","lightgreen","lightblue",
 "mediumpurple","darkorange","peachpuff","saddlebrown","black","newCl"];
 
 let currentTool = "pencil";
 let toolArr = ["pencil","paint","eraser"];
+
+let upWait = true;
+let maxUndoLen = 5;
 
 let rightWall = [];
 for(let i = 0; i < 40; i++){
@@ -104,8 +107,24 @@ for(let x = 0; x < 80; x++){
       }
       });
     //listener for mouse up and down
-    newBox.addEventListener("mousedown", function(){ mDown = true; });
-    newBox.addEventListener("mouseup", function(){ mDown = false; });
+    newBox.addEventListener("mousedown", function(){
+        mDown = true;
+        if(upWait){
+          upWait = false;
+          let tempArr = [];
+          for(let i = 0; i < objTo.childNodes.length; i++){
+            tempArr.push([getComputedStyle(objTo.childNodes[i]).getPropertyValue('--gridColor'),getComputedStyle(objTo.childNodes[i]).getPropertyValue('--borderColor')]);
+          }
+          undoRecord.unshift(tempArr);
+          if(undoRecord.length > maxUndoLen){
+            undoRecord.pop();
+          }
+        }
+      });
+    newBox.addEventListener("mouseup", function(){
+        mDown = false;
+        upWait = true;
+      });
     newBox.addEventListener("mousemove", function(){
       if(mDown && currentTool == "pencil"){
         newBox.style.setProperty("--gridColor", currentCl);
@@ -138,8 +157,20 @@ for(let i = 0; i < toolArr.length; i++){
           setToolBorder("--" + toolArr[i]);
         });
 }
-const undo = document.getElementById('undo');
 
+let undoRecord = [];
+const undo = document.getElementById('undo');
 undo.addEventListener("click", function(){
+
+  for(let i = 0; i < objTo.childNodes.length; i++){
+    objTo.childNodes[i].style.setProperty("--gridColor", undoRecord[0][i][0]);
+    objTo.childNodes[i].style.setProperty("--borderColor", undoRecord[0][i][1]);
+  }
+  undoRecord.shift();
+  //location.reload();
+});
+
+const clear = document.getElementById('clear');
+clear.addEventListener("click", function(){
   location.reload();
 });
